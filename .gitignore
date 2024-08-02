@@ -21,5 +21,4 @@ pnpm-debug.log*
 *.sln
 *.sw?
 
-# visual studio code workspace
-.code-workspace
+
