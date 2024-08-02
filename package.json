@@ -20,6 +20,12 @@
     "eslint": "^7.32.0",
     "eslint-plugin-vue": "^8.0.3"
   },
+  "browserslist": [
+      "> 1%",
+      "last 2 versions",
+      "not dead",
+      "not ie 11"
+    ],
   "eslintConfig": {
     "root": true,
     "env": {
@@ -30,14 +36,14 @@
       "eslint:recommended"
     ],
     "parserOptions": {
-      "parser": "@babel/eslint-parser"
+      "parser": "espree",
+      "babelOptions": {
+        "configFile": "./babel.config.js"
+      }
     },
-    "rules": {}
-  },
-  "browserslist": [
-    "> 1%",
-    "last 2 versions",
-    "not dead",
-    "not ie 11"
-  ]
+    "rules": {
+        "no-console": "error",
+        "vue/multi-word-component-names": "off"
+    }
+  }
 }
