@@ -15,11 +15,11 @@
     </div>
     <div id="title-space">
       <!-- Website title -->
-      <h1 class="website-title">Willkommen!</h1>
+      <h1 class="website-title">Musik</h1>
     </div>
     <div class="image-text-container">
-      <img src="@/assets/img/portfolio1.jpg" alt="Portrait von Kirsten Bodendieck" class="image">
-      <p class="lorem-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. In unde voluptates ratione blanditiis, veritatis sint animi. Deserunt, esse! Perspiciatis, vitae. Odit dolorum illo perspiciatis aut earum? Adipisci alias nobis veritatis nulla voluptatum nostrum odio, accusamus laborum sed voluptatem aspernatur nam amet in cum reiciendis ducimus, dignissimos facere molestiae sunt incidunt eligendi neque consequatur! Iure error cupiditate natus numquam velit eveniet totam culpa aperiam nemo!</p>
+      <img src="@/assets/img/portfolio2.jpg" alt="Bild von Kirsten Bodendieck" class="image">
+      <p class="lorem-text">... erleben, erlernen, ausüben, genießen Musik mit anderen Menschen zusammen zu erleben, gehört für mich zu den schönsten Dingen der Welt. Die Musik ist von jeher Bestandteil meines Lebens. Ich möchte die Freude, die ich an ihr habe, gerne mit Ihnen teilen. <br><br> Möchten Sie oder Ihr Kind ein Instrument erlernen? <br> Wollten Sie schon immer einmal nach Herzenslust singen? <br><br> Ich lade Sie ein, diese Dinge mit mir zusammen zu tun und sich eine vielfältige und lebensfrohe Welt zu erschließen. <br><br> <em>Herzlich Willkommen!</em></p>
     </div>
     <div>
       <blockquote class="fancy-quote">
@@ -28,8 +28,11 @@
       </blockquote>
     </div>
     <div class="image-text-container">
-      <p class="second-lorem-text">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Optio dolorum similique suscipit, rerum hic soluta quidem dicta possimus deserunt atque aut doloribus, ut ipsam enim ea, blanditiis dolores cum iusto. Ipsum repellat expedita consequatur sint, non quaerat facilis repudiandae, numquam alias omnis tenetur libero, veniam necessitatibus voluptatem laudantium ipsa itaque recusandae asperiores. Doloribus quod, nulla non obcaecati sapiente repellat illum voluptate animi. Libero quisquam, consequuntur facilis nobis iste excepturi itaque quidem est maiores odio natus molestiae, alias, expedita esse exercitationem!</p>
-      <img src="@/assets/img/portfolio2.jpg" alt="Bild von Kirsten Bodendieck" class="image">
+      <p class="second-lorem-text">Seit meiner Kindheit begleitet und verzaubert mich die Musik. Ich begann mit Blockflöten- und Klavierspiel und erlag dann als Jugendliche im Chor einer Kirchengemeinde der Faszination des gemeinschaftlichen Singens. In zahlreichen Seminaren und Kursen habe ich das musikalische Handwerkszeug von der Pike auf gelernt und meine Fähigkeiten kontinuierlich verfeinert. <br><br> 
+        Von 1999 bis 2007 habe ich eine Lehrtätigkeit als Dozentin an der Fachhochschule für Kunsttherapie, Kunstpädagogik und Freie Bildende Kunst in Ottersberg, im Fachbereich Darstellende Kunst, ausgeübt. <br><br> CVT Zertifikation für Chorleitung an der Popakademie Witten.<br><br>
+        Seit 1989 stehe ich als Chorleiterin vor verschiedenen Ensembles und Chören. Dazu zählten:<br>
+        Das Bremer Chor Kollektiv, Shosholoza, Terzattacke, Forensik-MitarbeiterInnen- Chor, Crossing Voices (mehr) und notabene (mehr). Aktuell leite ich die Chorifeen, sing n smile und das Chorprojekt X.</p>
+      <img src="@/assets/img/portfolio1.jpg" alt="Portrait von Kirsten Bodendieck" class="image">
     </div>
     <div class="h2-container">
       <h2>Lust auf aktuelle Veranstaltungen?</h2>
@@ -39,7 +42,7 @@
         <img src="@/assets/img/chorplakat1.png" alt="Poster" class="poster-image">
         <div class="poster-info">
           <h3>Sing!</h3>
-          <p>Diese Box würde ich gerne etwas größer machen und mit einer Art Slider versehen wo man zwischen den verschiedenen aktuellen Veranstaltungen hin und her wechseln kann. \br Außerdem wäre hier dann noch eine Verlinkung zur Aktuelles Seite</p>
+          <p>Diese Box würde ich gerne etwas größer machen und mit einer Art Slider versehen wo man zwischen den verschiedenen aktuellen Veranstaltungen hin und her wechseln kann. Außerdem wäre hier dann noch eine Verlinkung zur Aktuelles Seite</p>
         </div>
       </div>
     </div>
@@ -107,22 +110,19 @@ export default {
   border: none;
 }
 
-
 .slide.active {
   display: block;
 }
 
-
 .slide img {
   width: 100%;
-  height: 400px;
+  height: 500px;
   object-fit: cover;
   border: none;
   display: block;
   margin: 0;
   padding: 0;
 }
-
 
 /* Navigation button styles */
 .prev, .next {
@@ -184,13 +184,13 @@ export default {
 }
 
 #title-space {
-  margin-top: 100px;
+  margin-top: 55px;
   text-align: center;
 }
 
 .website-title {
-  font-size: 52px;
-  font-weight: 700;
+  font-size: 62px;
+  font-weight: 800;
   color: #212121;
   letter-spacing: 2px;
   margin-bottom: 10px;
@@ -211,25 +211,25 @@ export default {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-top: 50px;
-  padding: 20px 200px 20px 300px;
+  margin-top: 10px;
+  padding: 10px 200px 10px 200px;
 }
 
 .image {
   width: 500px;
   height: 500px;
-  margin: 50px;
+  margin: 50px 50px 50px 50px;
   border-radius: 10px;
 }
 
 .lorem-text {
-  margin: 10px;
+  margin: 50px;
   text-align: block;
   font-size: 22px;
 }
 
 .second-lorem-text {
-  margin: 10px;
+  margin: 50px;
   text-align: block;
   font-size: 22px
 }
@@ -238,7 +238,7 @@ export default {
   font-size: 24px;
   font-style: italic;
   color: #333;
-  padding: 20px 50px 20px 100px;
+  padding: 20px;
   border-left: 4px solid #ccc;
   background-color: #f9f9f9;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -269,8 +269,8 @@ export default {
 }
 
 .h2-container h2 {
-  font-size: 36px;
-  font-weight: 700;
+  font-size: 40px;
+  font-weight: 800;
   color: #212121;
   letter-spacing: 2px;
   margin-bottom: 10px;
