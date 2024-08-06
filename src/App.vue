@@ -3,7 +3,7 @@
     <Header @update-page="updatePage" />
     <main class="main-content">
       <!-- Use v-if with currentPage variable -->
-      <Home v-if="currentPage === 'home'" />
+      <Home @update-page="updatePage" v-if="currentPage === 'home'" />
       <ChorprojektX v-if="currentPage === 'chor_projekt_x'" />
       <Chorifeen v-if="currentPage === 'chorifeen'" />
       <SingnSmile v-if="currentPage === 'sing_n_smile'" />

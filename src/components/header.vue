@@ -1,6 +1,6 @@
 <template>
   <header class="navbar">
-    <a class="nav-link" @click="updatePage('home')">Willkommen</a>
+    <a class="nav-link" @click="updatePage('home')">Home</a>
     <div class="dropdown">
       <button class="dropbtn">Chöre</button>
       <div class="dropdown-content">

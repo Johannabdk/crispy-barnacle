@@ -15,24 +15,55 @@
     </div>
     <div id="title-space">
       <!-- Website title -->
-      <h1 class="website-title">Musik</h1>
+      <h1 class="website-title">Willkommen!</h1>
     </div>
-    <div class="image-text-container">
-      <img src="@/assets/img/portfolio2.jpg" alt="Bild von Kirsten Bodendieck" class="image">
-      <p class="lorem-text">... erleben, erlernen, ausüben, genießen Musik mit anderen Menschen zusammen zu erleben, gehört für mich zu den schönsten Dingen der Welt. Die Musik ist von jeher Bestandteil meines Lebens. Ich möchte die Freude, die ich an ihr habe, gerne mit Ihnen teilen. <br><br> Möchten Sie oder Ihr Kind ein Instrument erlernen? <br> Wollten Sie schon immer einmal nach Herzenslust singen? <br><br> Ich lade Sie ein, diese Dinge mit mir zusammen zu tun und sich eine vielfältige und lebensfrohe Welt zu erschließen. <br><br> <em>Herzlich Willkommen!</em></p>
+    <div class="portfolio-container">
+      <div class="image-text-container">
+        <img src="@/assets/img/portfolio2.jpg" alt="Bild von Kirsten Bodendieck" class="portfolio-image">
+        <img src="@/assets/icon/macaroni-playing-music.png" alt="PNG Image von zwei tanzenden Personen" class="upper-corner-image">
+        <img src="@/assets/icon/lounge-background-green.png" alt="PNG Image von einem grünen Fleck" class="lower-corner-image">
+        <div class="text-box">
+          <p class="portfolio-text">Seit meiner Kindheit begleitet und verzaubert mich die Musik. <br><br> 
+            Gerne möchte ich mit meiner Musik andere Menschen zum Musizieren animieren. Blöckflöten- und Klavierspiel, Gesang alleine oder im Chor - Es gibt nichts Schöneres!<br><br>
+            Seit 1989 stehe ich als Chorleiterin vor verschiedenen Ensembles und Chören, aktuell leite ich die Chorifeen, sing n smile und das Chorprojekt X. <br><br>
+            Ich bin langjähriges Mitglied des Deutschen Tonkünstlerverbandes. Seit März 2016 bin ich Vorsitzende des KreisChorVerbandes Bremen. </p>
+        </div>
+      </div>
+    </div>
+    <div class="service-container">
+      <div class="service-top">
+        <img src="@/assets/icon/transistor-tree-musical-notes.png" alt="Illustration von ein paar Noten" class="service-image-bottom-left">
+        <div class="service">
+          <h3>Musik mit einem Instrument</h3>
+          <p>Unterricht für Kinder und Erwachsene. <br><br>
+            Ich heiße Anfänger <em>und</em> Fortgeschrittene willkommen.</p>
+          <ul>
+            <li><a @click="updatePage('blockfloete')">Blockflöte</a></li>
+            <li><a @click="updatePage('klavier')">Klavier</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="service-bottom">
+        <div class="service">
+          <h3>Musik mit der Stimme</h3>
+          <p>Im Einzelunterricht die Stimme entwickeln, gemeinsam in einer Gruppe singen oder sich als Ensemble unterstützen lassen</p>
+          <ul>
+            <li><a @click="updatePage('gesang')">Gesang</a></li>
+            <li><a @click="updatePage('stimmbildung')">Simmbildung</a></li>
+            <li><a @click="updatePage('coaching')">Coaching</a></li>
+          </ul>
+        </div>
+        <img src="@/assets/icon/transistor-tree-musical-notes.png" alt="Illustration von ein paar Noten." class="service-image-upper-right">
+      </div>
     </div>
     <div>
-      <blockquote class="fancy-quote">
-        <p>"The greatest glory in living lies not in never falling, but in rising every time we fall."</p>
-        <cite>- Nelson Mandela</cite>
-      </blockquote>
+      <p id="disclaimer">Der restliche Part ist noch in Arbeit! Vorstellung: Nochmal ein Bild Element mit Text und/oder dem Zitat; Aktuelle Veranstaltungen noch interessanter!</p>
     </div>
-    <div class="image-text-container">
-      <p class="second-lorem-text">Seit meiner Kindheit begleitet und verzaubert mich die Musik. Ich begann mit Blockflöten- und Klavierspiel und erlag dann als Jugendliche im Chor einer Kirchengemeinde der Faszination des gemeinschaftlichen Singens. In zahlreichen Seminaren und Kursen habe ich das musikalische Handwerkszeug von der Pike auf gelernt und meine Fähigkeiten kontinuierlich verfeinert. <br><br> 
-        Von 1999 bis 2007 habe ich eine Lehrtätigkeit als Dozentin an der Fachhochschule für Kunsttherapie, Kunstpädagogik und Freie Bildende Kunst in Ottersberg, im Fachbereich Darstellende Kunst, ausgeübt. <br><br> CVT Zertifikation für Chorleitung an der Popakademie Witten.<br><br>
-        Seit 1989 stehe ich als Chorleiterin vor verschiedenen Ensembles und Chören. Dazu zählten:<br>
-        Das Bremer Chor Kollektiv, Shosholoza, Terzattacke, Forensik-MitarbeiterInnen- Chor, Crossing Voices (mehr) und notabene (mehr). Aktuell leite ich die Chorifeen, sing n smile und das Chorprojekt X.</p>
-      <img src="@/assets/img/portfolio1.jpg" alt="Portrait von Kirsten Bodendieck" class="image">
+    <div class="quote-container">
+        <blockquote class="fancy-quote">
+          <p>"The only thing better than singing is more singing!"</p>
+          <cite>- Ella Fitzgerald</cite>
+        </blockquote>
     </div>
     <div class="h2-container">
       <h2>Lust auf aktuelle Veranstaltungen?</h2>
@@ -45,9 +76,6 @@
           <p>Diese Box würde ich gerne etwas größer machen und mit einer Art Slider versehen wo man zwischen den verschiedenen aktuellen Veranstaltungen hin und her wechseln kann. Außerdem wäre hier dann noch eine Verlinkung zur Aktuelles Seite</p>
         </div>
       </div>
-    </div>
-    <div>
-      <p id="disclaimer">Hier kommen nochmal meine eigenen Vorhaben für die Homepage: Styling Elemente (damit, es etwas spannender aussieht), Mobil-Port und kleiner Bildschirm Port, Angepasste Farben und verbesserter Bild-Slider (Diashow mäßig) &#129300;</p>
     </div>
   </div>
 </template>
@@ -78,7 +106,10 @@ export default {
     },
     currentSlide(index) {
       this.currentIndex = index
-    }
+    },
+    updatePage(page) {
+    this.$emit('update-page', page);
+    },
   }
 }
 </script>
@@ -206,32 +237,148 @@ export default {
   border-radius: 5px;
 }
 
-.image-text-container {
-  position: relative;
+.portfolio-container {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
-  margin-top: 10px;
-  padding: 10px 200px 10px 200px;
+  min-height: 100vh;
+  padding: 20px 0px 20px 0px;
 }
 
-.image {
-  width: 500px;
-  height: 500px;
-  margin: 50px 50px 50px 50px;
+.image-text-container {
+  position: relative;
+}
+
+.portfolio-image {
+  width: 400px;
+  height: auto;
+  display: block;
+  border-radius: 10px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+
+.upper-corner-image {
+  position: absolute;
+  top: -65px;
+  right: -440px;
+  width: 300px;
+  height: auto;
+  overflow: visible;
+}
+
+.lower-corner-image {
+  position: absolute;
+  bottom: -50px;
+  left: -100px;
+  width: 300px;
+  height: auto;
+  z-index: -1;
+  overflow: visible;
+}
+
+.text-box {
+  position: absolute;
+  top: 30%;
+  right: -90%; /* Adjust for desired overlap */
+  transform: translateY(-20%);
+  background-color: rgba(255, 255, 255, 0.9);
+  padding: 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  max-width: 90%; /* Adjust as needed */
   border-radius: 10px;
 }
 
-.lorem-text {
-  margin: 50px;
-  text-align: block;
-  font-size: 22px;
+.portfolio-text {
+  font-size: 20px;
+  font-weight: 200;
 }
 
-.second-lorem-text {
-  margin: 50px;
-  text-align: block;
-  font-size: 22px
+#services {
+  margin-top: 50px;
+  padding: 20px;
+  background-color: #f7f7f7;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.service-container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh; /* adjust the height to your needs */
+}
+
+.service {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  max-width: 600px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  position: relative;
+}
+
+.service-top {
+  transform: translate(-100px, -25px);
+  z-index: 1;
+}
+
+.service-bottom {
+  transform: translate(150px, 25px);
+}
+
+.service h3 {
+  font-size: 24px;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.service p {
+  font-size: 18px;
+  color: #666;
+  margin-bottom: 20px;
+}
+
+.service ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.service li {
+  margin-bottom: 10px;
+}
+
+.service a {
+  text-decoration: none;
+  color: #337ab7;
+}
+
+.service a:hover {
+  color: #23527c;
+  cursor: pointer;
+}
+
+.service-image-bottom-left {
+  position: absolute;
+  z-index: 1;
+  bottom: 0;
+  left: 0;
+  transform: translate(-50px, 85px);
+  width: 150px;
+  height: auto;
+}
+
+.service-image-upper-right {
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  right: 0;
+  transform: translate(50px, -25px);
+  width: 200px;
+  height: auto;
 }
 
 .fancy-quote {
@@ -253,14 +400,6 @@ export default {
   font-weight: bold;
   display: block;
   margin-top: 10px;
-}
-
-.image-text-container .lorem-text {
-  margin-left: 100px;
-}
-
-.image-text-container .second-lorem-text {
-  margin-right: 100px;
 }
 
 .h2-container {

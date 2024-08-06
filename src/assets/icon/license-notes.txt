@@ -1,0 +1,24 @@
+Home.vue:
+
+macaroni-playing-music...
+* Illustration by <a href="https://icons8.com/illustrations/author/WsYoyZ6jp8sg">Victoria Chepkasova</a> from <a href="https://icons8.com/illustrations">Ouch!</a>
+
+Not used yet:
+
+lime-man-and-woman-dancing...
+* Illustration by <a href="https://icons8.com/illustrations/author/8EFXLhT3w7gp">Maria Shukshina</a> from <a href="https://icons8.com/illustrations">Ouch!</a>
+
+transistor-tree-musical..
+* Illustration by <a href="https://icons8.com/illustrations/author/zD2oqC8lLBBA">Icons 8</a> from <a href="https://icons8.com/illustrations">Ouch!</a>
+
+taxi-461
+* Illustration by <a href="https://icons8.com/illustrations/author/zD2oqC8lLBBA">Icons 8</a> from <a href="https://icons8.com/illustrations">Ouch!</a>
+
+dazzle-musical-notes
+* Illustration by <a href="https://icons8.com/illustrations/author/zD2oqC8lLBBA">Icons 8</a> from <a href="https://icons8.com/illustrations">Ouch!</a>
+
+forms-multicolored-wavy
+* Illustration by <a href="https://icons8.com/illustrations/author/zD2oqC8lLBBA">Icons 8</a> from <a href="https://icons8.com/illustrations">Ouch!</a>
+
+lounge-background-green
+* Illustration by <a href="https://icons8.com/illustrations/author/zD2oqC8lLBBA">Icons 8</a> from <a href="https://icons8.com/illustrations">Ouch!</a>
