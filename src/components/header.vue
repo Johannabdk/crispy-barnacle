@@ -6,7 +6,7 @@
       <div class="dropdown-content">
         <a class="dropdown-item" @click="updatePage('chor_projekt_x')">Chorprojekt X</a>
         <a class="dropdown-item" @click="updatePage('chorifeen')">Chorifeen</a>
-        <a class="dropdown-item" @click="updatePage('sing_n_smile')">Sing n smile</a>
+        <a class="dropdown-item" @click="updatePage('sing_n_smile')">sing n smile</a>
       </div>
     </div>
     <div class="dropdown">
@@ -26,6 +26,7 @@
     </div>
     <a class="dropdown-item" @click="updatePage('aktuelles')">Aktuelles</a>
     <a class="dropdown-item" @click="updatePage('kontakt')">Kontakt</a>
+    <span class="username">kirsten BODENDIECK</span>
   </header>
 </template>
 
@@ -114,7 +115,6 @@ export default {
 }
 
 .navbar a {
-  /* change the cursor to a pointing hand */
   cursor: pointer;
 }
 
@@ -122,5 +122,13 @@ export default {
   /* background color on click */
   background-color: #ccc;
   color: #333;
+}
+
+.username {
+  float: right;
+  margin-right: 30px;
+  margin-top: 10px;
+  font-size: 22px;
+  color: #000000;
 }
 </style>

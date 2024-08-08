@@ -12,6 +12,11 @@
       <!-- The navigation buttons -->
       <a class="prev" @click="prevSlide">&#10094;</a>
       <a class="next" @click="nextSlide">&#10095;</a>
+      <!-- Slider text box
+      <div class="slider-textbox">
+        <span class="name">kirsten</span>
+        <span class="surname">BODENDIECK</span>
+      </div>-->
     </div>
     <div id="title-space">
       <!-- Website title -->
@@ -46,7 +51,7 @@
       <div class="service-bottom">
         <div class="service">
           <h3>Musik mit der Stimme</h3>
-          <p>Im Einzelunterricht die Stimme entwickeln, gemeinsam in einer Gruppe singen oder sich als Ensemble unterstützen lassen</p>
+          <p>Im Einzelunterricht die Stimme entwickeln, gemeinsam in einer Gruppe singen oder sich als Ensemble unterstützen lassen.</p>
           <ul>
             <li><a @click="updatePage('gesang')">Gesang</a></li>
             <li><a @click="updatePage('stimmbildung')">Simmbildung</a></li>
@@ -83,16 +88,16 @@
 <script>
 import sliderimg1 from '../assets/img/sliderimg1.jpg';
 import pianoexample from '../assets/img/pianoexample.jpg';
-import sliderimg3 from '../assets/img/notenExample.jpg';
+import sliderimg2 from '../assets/img/sliderimg2.jpg';
 
 export default {
   name: 'Home',
   data() {
     return {
       images: [
-        { src: sliderimg3, alt: 'Image 1' },
-        { src: sliderimg1, alt: 'Image 2' },
-        { src: pianoexample, alt: 'Image 3' }
+        { src: sliderimg1, alt: 'Portrait von Kirsten Bodendieck' },
+        { src: pianoexample, alt: 'Bild von Klaviertasten und einem Notenblatt' },
+        { src: sliderimg2, alt: 'Image 3' }
       ],
       currentIndex: 1
     }
@@ -154,6 +159,30 @@ export default {
   margin: 0;
   padding: 0;
 }
+
+/* text box on slider
+.slider-textbox {
+  position: absolute;
+  top: 40px;
+  right: 40px;
+  background-color: rgba(255, 255, 255, 0.8);
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+  padding: 10px;
+  border-radius: 5px;
+  font-size: 42px;
+  font-weight: bold;
+  color: #000000;
+  text-align: right;
+}
+
+.slider-textbox .name {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.slider-textbox .surname {
+  display: block;
+}*/
 
 /* Navigation button styles */
 .prev, .next {
@@ -260,7 +289,7 @@ export default {
 .upper-corner-image {
   position: absolute;
   top: -65px;
-  right: -440px;
+  right: -470px;
   width: 300px;
   height: auto;
   overflow: visible;
@@ -279,12 +308,12 @@ export default {
 .text-box {
   position: absolute;
   top: 30%;
-  right: -90%; /* Adjust for desired overlap */
+  right: -90%;
   transform: translateY(-20%);
   background-color: rgba(255, 255, 255, 0.9);
   padding: 20px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  max-width: 90%; /* Adjust as needed */
+  max-width: 90%;
   border-radius: 10px;
 }
 
@@ -363,12 +392,13 @@ export default {
 
 .service-image-bottom-left {
   position: absolute;
-  z-index: 1;
   bottom: 0;
   left: 0;
+  z-index: 1;
   transform: translate(-50px, 85px);
   width: 150px;
   height: auto;
+  pointer-events: none; 
 }
 
 .service-image-upper-right {

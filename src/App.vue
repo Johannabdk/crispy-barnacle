@@ -60,6 +60,9 @@
     margin: 0;
     padding: 0;
     font-family: 'Frutiger', sans-serif; 
+    /*background-image: url("@/assets/icon/wallpaper3.jpg");
+    background-size: cover;
+    background-position: center;*/
   }
 
   .app-container {
