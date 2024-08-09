@@ -1,22 +1,17 @@
 <template>
   <div class="home-page">
     <div class="slider">
-      <!-- The slider images -->
+      <!-- Slider images -->
       <div class="slide" v-for="(image, index) in images" :key="index" :class="{ active: currentIndex === index + 1 }">
         <img :src="image.src" :alt="image.alt">
       </div>
-      <!-- The dots navigation -->
+      <!-- Image slider dots -->
       <div class="dots">
         <span class="dot" v-for="(image, index) in images" :key="index" @click="currentSlide(index + 1)" :class="{ active: currentIndex === index + 1 }"></span>
       </div>
-      <!-- The navigation buttons -->
+      <!-- Image slider buttons -->
       <a class="prev" @click="prevSlide">&#10094;</a>
       <a class="next" @click="nextSlide">&#10095;</a>
-      <!-- Slider text box
-      <div class="slider-textbox">
-        <span class="name">kirsten</span>
-        <span class="surname">BODENDIECK</span>
-      </div>-->
     </div>
     <div id="title-space">
       <!-- Website title -->
@@ -25,7 +20,7 @@
     <div class="portfolio-container">
       <div class="image-text-container">
         <img src="@/assets/img/portfolio2.jpg" alt="Bild von Kirsten Bodendieck" class="portfolio-image">
-        <img src="@/assets/icon/macaroni-playing-music.png" alt="PNG Image von zwei tanzenden Personen" class="upper-corner-image">
+        <img src="@/assets/icon/taxi-461.png" alt="PNG Image von zwei tanzenden Personen" class="upper-corner-image">
         <img src="@/assets/icon/lounge-background-green.png" alt="PNG Image von einem grünen Fleck" class="lower-corner-image">
         <div class="text-box">
           <p class="portfolio-text">Seit meiner Kindheit begleitet und verzaubert mich die Musik. <br><br> 
@@ -35,6 +30,7 @@
         </div>
       </div>
     </div>
+    <!-- Angebote -->
     <div class="service-container">
       <div class="service-top">
         <img src="@/assets/icon/transistor-tree-musical-notes.png" alt="Illustration von ein paar Noten" class="service-image-bottom-left">
@@ -61,6 +57,7 @@
         <img src="@/assets/icon/transistor-tree-musical-notes.png" alt="Illustration von ein paar Noten." class="service-image-upper-right">
       </div>
     </div>
+    <!--TODO-->
     <div>
       <p id="disclaimer">Der restliche Part ist noch in Arbeit! Vorstellung: Nochmal ein Bild Element mit Text und/oder dem Zitat; Aktuelle Veranstaltungen noch interessanter!</p>
     </div>
@@ -96,8 +93,8 @@ export default {
     return {
       images: [
         { src: sliderimg1, alt: 'Portrait von Kirsten Bodendieck' },
-        { src: pianoexample, alt: 'Bild von Klaviertasten und einem Notenblatt' },
-        { src: sliderimg2, alt: 'Image 3' }
+        { src: pianoexample, alt: 'Bild von Klaviertasten und einem Notenblatt.' },
+        { src: sliderimg2, alt: 'Bild von Kirsten Bodendieck beim Dirigieren.' }
       ],
       currentIndex: 1
     }
@@ -121,16 +118,7 @@ export default {
 
 <style scoped>
 
-/* Slider container styles */
-.slider-container {
-  position: relative;
-  margin: 0 auto;
-  padding-top: 0;
-  border: none;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-}
-
-/* Slider styles */
+/* Image slider container styles */
 .slider {
   position: relative;
   max-width: 100%;
@@ -140,7 +128,7 @@ export default {
   overflow: hidden;
 }
 
-/* Slider image styles */
+/* Image slider styles */
 .slide {
   display: none;
   border: none;
@@ -160,31 +148,7 @@ export default {
   padding: 0;
 }
 
-/* text box on slider
-.slider-textbox {
-  position: absolute;
-  top: 40px;
-  right: 40px;
-  background-color: rgba(255, 255, 255, 0.8);
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
-  padding: 10px;
-  border-radius: 5px;
-  font-size: 42px;
-  font-weight: bold;
-  color: #000000;
-  text-align: right;
-}
-
-.slider-textbox .name {
-  display: block;
-  margin-bottom: 5px;
-}
-
-.slider-textbox .surname {
-  display: block;
-}*/
-
-/* Navigation button styles */
+/* Slider arrow styles */
 .prev, .next {
   cursor: pointer;
   position: absolute;
@@ -209,12 +173,11 @@ export default {
   right: 10px; 
 }
 
-
 .prev:hover, .next:hover {
   background-color: rgba(0, 0, 0, 0.8);
 }
 
-/* Dots navigation styles */
+/* Slider dots styles */
 .dots {
   text-align: center;
   position: absolute;
@@ -288,9 +251,13 @@ export default {
 
 .upper-corner-image {
   position: absolute;
-  top: -65px;
+  /*top: -65px;
   right: -470px;
-  width: 300px;
+  width: 300px; for macaroni icon*/
+  top: -10px;
+  right: -400px;
+  width: 100px;
+  transform: rotate(-15deg);
   height: auto;
   overflow: visible;
 }
@@ -322,6 +289,7 @@ export default {
   font-weight: 200;
 }
 
+/* Title container */
 #services {
   margin-top: 50px;
   padding: 20px;
@@ -330,13 +298,14 @@ export default {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
+/* Service styles */
 .service-container {
   position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 100vh; /* adjust the height to your needs */
+  height: 100vh;
 }
 
 .service {
@@ -390,6 +359,7 @@ export default {
   cursor: pointer;
 }
 
+/* Service icon styles */
 .service-image-bottom-left {
   position: absolute;
   bottom: 0;
@@ -410,6 +380,8 @@ export default {
   width: 200px;
   height: auto;
 }
+
+/* TODO */
 
 .fancy-quote {
   font-size: 24px;
