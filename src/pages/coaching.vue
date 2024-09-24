@@ -1,14 +1,13 @@
 <template>
   <div>
-    <span style='font-size:100px;'>&#128546;</span>
-    <p>Der Inhalt ist noch in Arbeit!</p>
+    <!--content here-->
   </div>
 </template>
 
 <script>
 export default {
 
-  name: 'Coaching',
+  name: 'Gesang',
 
   // your component logic here
 

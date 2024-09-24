@@ -47,8 +47,14 @@
         currentPage: 'home'
       }
     },
+    mounted() {
+      // reading current page from URL hash
+      this.currentPage = window.location.hash.replace('#', '') || 'home';
+    },
     methods: {
       updatePage(page) {
+      // updating URL hash when page changes
+      window.location.hash = `#${page}`;
       this.currentPage = page;
       }
     },
@@ -60,9 +66,9 @@
     margin: 0;
     padding: 0;
     font-family: 'Frutiger', sans-serif; 
-    /*background-image: url("@/assets/icon/wallpaper3.jpg");
+    /*background-image: url("@/assets/icon/wallpaper1.jpg");
     background-size: cover;
-    background-position: center;*/
+    background-position: left;*/
   }
 
   .app-container {
