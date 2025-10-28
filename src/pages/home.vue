@@ -1,29 +1,32 @@
 <template>
   <div class="home-page">
-    <div class="slider">
-      <!-- Slider images -->
-      <div class="slide" v-for="(image, index) in images" :key="index" :class="{ active: currentIndex === index + 1 }">
-        <img :src="image.src" :alt="image.alt">
-      </div>
-      <!-- Image slider dots -->
-      <div class="dots">
-        <span class="dot" v-for="(image, index) in images" :key="index" @click="currentSlide(index + 1)" :class="{ active: currentIndex === index + 1 }"></span>
+    <div class="relative max-w-full mx-auto shadow-md overflow-hidden h-1/2">
+      <!-- Slider container -->
+      <div class="flex relative h-full w-full overflow-hidden">
+        <!-- Slider images -->
+        <div class="w-full h-full" v-for="(image, index) in images" :key="index" :class="{ 'hidden': currentIndex !== index + 1 }">
+          <img class="w-full h-[500px] object-cover animation-fade-in duration-1000" :src="image.src" :alt="image.alt">
+        </div>
       </div>
       <!-- Image slider buttons -->
-      <a class="prev" @click="prevSlide">&#10094;</a>
-      <a class="next" @click="nextSlide">&#10095;</a>
+      <div class="absolute z-10 top-1/2 transform -translate-y-1/2 w-full flex justify-between">
+        <a class="cursor-pointer px-4 py-4 text-white font-bold text-lg transition duration-600 ease-in-out bg-gray-800 opacity-60 hover:bg-gray-700" @click="prevSlide">&#10094;</a>
+        <a class="cursor-pointer px-4 py-4 text-white font-bold text-lg transition duration-600 ease-in-out bg-gray-800 opacity-60 hover:bg-gray-700" @click="nextSlide">&#10095;</a>
+      </div>
+      <!-- Image slider dots -->
+      <div class="absolute bottom-4 left-1/2 transform -translate-x-1/2 z-10 text-center">
+        <span class="cursor-pointer h-4 w-4 mx-1 bg-gray-300 rounded-full inline-block transition duration-600 ease-in-out" v-for="(image, index) in images" :key="index" @click="currentSlide(index + 1)" :class="{ 'bg-gray-600': currentIndex === index + 1 }"></span>
+      </div>
     </div>
-    <div id="title-space">
-      <!-- Website title -->
-      <h1 class="website-title">Willkommen!</h1>
+    <div id="title-space" class="mt-14 text-center">
+      <h1 class="text-6xl font-extrabold text-gray-800 tracking-wide mb-2">Willkommen!</h1>
     </div>
-    <div class="portfolio-container">
-      <div class="image-text-container">
-        <img src="@/assets/img/portfolio2.jpg" alt="Bild von Kirsten Bodendieck" class="portfolio-image">
-        <img src="@/assets/icon/taxi-461.png" alt="PNG Image von zwei tanzenden Personen" class="upper-corner-image">
-        <img src="@/assets/icon/lounge-background-green.png" alt="PNG Image von einem grünen Fleck" class="lower-corner-image">
-        <div class="text-box">
-          <p class="portfolio-text">Seit meiner Kindheit begleitet und verzaubert mich die Musik. <br><br> 
+    <div class="portfolio-container flex justify-center items-center min-h-screen py-20">
+      <div class="image-text-container flex relative max-w-4xl mx-auto justify-center items-center">
+        <img src="@/assets/img/portfolio2.jpg" alt="Bild von Frau" class="portfolio-image w-96 h-120 rounded-lg shadow-md object-cover ml-[-30px]">
+        <div class="text-box relative h-fit w-auto max-h-300px px-5 py-5 ml-[-30px] sm:ml-[-20px] bg-white bg-opacity-90 shadow-md rounded-lg justify-center w-3/4">
+          <img src="@/assets/icon/taxi-461.png" alt="Bild von Notenschlüssel" class="absolute top-[-50px] right-[-25px] w-24 transform rotate-15 z-[-1] hidden lg:block">
+          <p class="portfolio-text text-base sm:text-lg font-light leading-relaxed">Seit meiner Kindheit begleitet und verzaubert mich die Musik. <br><br> 
             Gerne möchte ich mit meiner Musik andere Menschen zum Musizieren animieren. Blöckflöten- und Klavierspiel, Gesang alleine oder im Chor - Es gibt nichts Schöneres!<br><br>
             Seit 1989 stehe ich als Chorleiterin vor verschiedenen Ensembles und Chören, aktuell leite ich die Chorifeen, sing n smile und das Chorprojekt X. <br><br>
             Ich bin langjähriges Mitglied des Deutschen Tonkünstlerverbandes. Seit März 2016 bin ich Vorsitzende des KreisChorVerbandes Bremen. </p>
@@ -31,54 +34,35 @@
       </div>
     </div>
     <!-- Angebote -->
-    <div class="service-container">
-      <div class="service-top">
-        <img src="@/assets/icon/transistor-tree-musical-notes.png" alt="Illustration von ein paar Noten" class="service-image-bottom-left">
-        <div class="service">
-          <h3>Musik mit einem Instrument</h3>
-          <p>Unterricht für Kinder und Erwachsene. <br><br>
-            Ich heiße Anfänger <em>und</em> Fortgeschrittene willkommen.</p>
-          <ul>
-            <li><a @click="updatePage('blockfloete')">Blockflöte</a></li>
-            <li><a @click="updatePage('klavier')">Klavier</a></li>
-          </ul>
+    <div id="services">
+      <div class="service-container flex flex-col items-center justify-center h-screen relative py-20 mx-auto max-w-2xl">
+        <div class="flex flex-col flex-1 w-full md:w-3/4 xl:w-2/3">
+          <div class="service-top mb-5 flex-1 mx-4 md:mx-6 xl:mx-8"> 
+            <div class="service bg-white p-5 rounded-lg shadow-md relative h-full">
+              <h3 class="text-lg font-bold text-gray-600 mb-3">Musik mit einem Instrument</h3>
+              <p class="text-base text-gray-600 mb-5">Unterricht für Kinder und Erwachsene. <br><br>
+                Ich heiße Anfänger <em>und</em> Fortgeschrittene willkommen.</p>
+              <ul class="list-none p-0 m-0">
+                <li class="mb-3"><a @click="updatePage('blockfloete')" class="text-blue-600 hover:text-blue-800">Blockflöte</a></li>
+                <li class="mb-3"><a @click="updatePage('klavier')" class="text-blue-600 hover:text-blue-800">Klavier</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="service-bottom mt-5 flex-1 mx-4 md:mx-6 xl:mx-8"> 
+            <div class="service bg-white p-5 rounded-lg shadow-md relative h-full">
+              <h3 class="text-lg font-bold text-gray-600 mb-3">Musik mit der Stimme</h3>
+              <p class="text-base text-gray-600 mb-5">Im Einzelunterricht die Stimme entwickeln, gemeinsam in einer Gruppe singen oder sich als Ensemble unterstützen lassen.</p>
+              <ul class="list-none p-0 m-0">
+                <li class="mb-3"><a @click="updatePage('gesang')" class="text-blue-600 hover:text-blue-800">Gesang</a></li>
+                <li class="mb-3"><a @click="updatePage('stimmbildung')" class="text-blue-600 hover:text-blue-800">Stimmbildung</a></li>
+                <li class="mb-3"><a @click="updatePage('coaching')" class="text-blue-600 hover:text-blue-800">Coaching</a></li>
+              </ul>
+            </div>
+          </div>
         </div>
-      </div>
-      <div class="service-bottom">
-        <div class="service">
-          <h3>Musik mit der Stimme</h3>
-          <p>Im Einzelunterricht die Stimme entwickeln, gemeinsam in einer Gruppe singen oder sich als Ensemble unterstützen lassen.</p>
-          <ul>
-            <li><a @click="updatePage('gesang')">Gesang</a></li>
-            <li><a @click="updatePage('stimmbildung')">Simmbildung</a></li>
-            <li><a @click="updatePage('coaching')">Coaching</a></li>
-          </ul>
-        </div>
-        <img src="@/assets/icon/transistor-tree-musical-notes.png" alt="Illustration von ein paar Noten." class="service-image-upper-right">
       </div>
     </div>
     <!--TODO-->
-    <div>
-      <p id="disclaimer">Der restliche Part ist noch in Arbeit! Vorstellung: Nochmal ein Bild Element mit Text und/oder dem Zitat; Aktuelle Veranstaltungen noch interessanter!</p>
-    </div>
-    <div class="quote-container">
-        <blockquote class="fancy-quote">
-          <p>"The only thing better than singing is more singing!"</p>
-          <cite>- Ella Fitzgerald</cite>
-        </blockquote>
-    </div>
-    <div class="h2-container">
-      <h2>Lust auf aktuelle Veranstaltungen?</h2>
-    </div>
-    <div class="poster-container">
-      <div class="poster-box">
-        <img src="@/assets/img/chorplakat1.png" alt="Poster" class="poster-image">
-        <div class="poster-info">
-          <h3>Sing!</h3>
-          <p>Diese Box würde ich gerne etwas größer machen und mit einer Art Slider versehen wo man zwischen den verschiedenen aktuellen Veranstaltungen hin und her wechseln kann. Außerdem wäre hier dann noch eine Verlinkung zur Aktuelles Seite</p>
-        </div>
-      </div>
-    </div>
   </div>
 </template>
 
@@ -118,352 +102,21 @@ export default {
 
 <style scoped>
 
-/* Image slider container styles */
-.slider {
-  position: relative;
-  max-width: 100%;
-  margin: 0 auto;
-  border: none;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-  overflow: hidden;
-}
-
-/* Image slider styles */
-.slide {
-  display: none;
-  border: none;
-}
-
-.slide.active {
-  display: block;
-}
-
-.slide img {
-  width: 100%;
-  height: 500px;
-  object-fit: cover;
-  border: none;
-  display: block;
-  margin: 0;
-  padding: 0;
-}
-
-/* Slider arrow styles */
-.prev, .next {
-  cursor: pointer;
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  width: auto;
-  padding: 16px;
-  margin-top: 0;
-  color: white;
-  font-weight: bold;
-  font-size: 18px;
-  transition: 0.6s ease;
-  border-radius: 0 3px 3px 0;
-  user-select: none;
-}
-
-.prev {
-  left: 10px; 
-}
-
-.next {
-  right: 10px; 
-}
-
-.prev:hover, .next:hover {
-  background-color: rgba(0, 0, 0, 0.8);
-}
-
-/* Slider dots styles */
-.dots {
-  text-align: center;
-  position: absolute;
-  top: 94%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 1;
-}
-
-.dot {
-  cursor: pointer;
-  height: 15px;
-  width: 15px;
-  margin: 0 2px;
-  background-color: #bbb;
-  border-radius: 50%;
-  display: inline-block;
-  transition: background-color 0.6s ease;
-}
-
-.dot:hover {
-  background-color: #717171;
-}
-
-.dot.active {
-  background-color: #717171;
-}
-
-#title-space {
-  margin-top: 55px;
-  text-align: center;
-}
-
-.website-title {
-  font-size: 62px;
-  font-weight: 800;
-  color: #212121;
-  letter-spacing: 2px;
-  margin-bottom: 10px;
-}
-
-.website-title::after {
-  content: "";
-  display: block;
-  width: 30px;
-  height: 3px;
-  background-color: #212121;
-  margin: 15px auto;
-  border-radius: 5px;
-}
-
-.portfolio-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
-  padding: 20px 0px 20px 0px;
-}
-
-.image-text-container {
-  position: relative;
-}
-
-.portfolio-image {
-  width: 400px;
-  height: auto;
-  display: block;
-  border-radius: 10px;
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
-}
-
-.upper-corner-image {
-  position: absolute;
-  /*top: -65px;
-  right: -470px;
-  width: 300px; for macaroni icon*/
-  top: -10px;
-  right: -400px;
-  width: 100px;
-  transform: rotate(-15deg);
-  height: auto;
-  overflow: visible;
-}
-
-.lower-corner-image {
-  position: absolute;
-  bottom: -50px;
-  left: -100px;
-  width: 300px;
-  height: auto;
-  z-index: -1;
-  overflow: visible;
-}
-
-.text-box {
-  position: absolute;
-  top: 30%;
-  right: -90%;
-  transform: translateY(-20%);
-  background-color: rgba(255, 255, 255, 0.9);
-  padding: 20px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  max-width: 90%;
-  border-radius: 10px;
-}
-
-.portfolio-text {
-  font-size: 20px;
-  font-weight: 200;
-}
-
-/* Title container */
-#services {
-  margin-top: 50px;
-  padding: 20px;
-  background-color: #f7f7f7;
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-/* Service styles */
-.service-container {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  height: 100vh;
-}
-
-.service {
-  background-color: #fff;
-  padding: 20px;
-  border-radius: 10px;
-  max-width: 600px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-  position: relative;
-}
-
-.service-top {
-  transform: translate(-100px, -25px);
-  z-index: 1;
-}
-
-.service-bottom {
-  transform: translate(150px, 25px);
-}
-
-.service h3 {
-  font-size: 24px;
-  font-weight: 600;
-  color: #333;
-  margin-bottom: 10px;
-}
-
-.service p {
-  font-size: 18px;
-  color: #666;
-  margin-bottom: 20px;
-}
-
-.service ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.service li {
-  margin-bottom: 10px;
-}
-
-.service a {
-  text-decoration: none;
-  color: #337ab7;
-}
-
-.service a:hover {
-  color: #23527c;
-  cursor: pointer;
-}
-
-/* Service icon styles */
-.service-image-bottom-left {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  z-index: 1;
-  transform: translate(-50px, 85px);
-  width: 150px;
-  height: auto;
-  pointer-events: none; 
-}
-
-.service-image-upper-right {
-  position: absolute;
-  z-index: 1;
-  top: 0;
-  right: 0;
-  transform: translate(50px, -25px);
-  width: 200px;
-  height: auto;
-}
-
-/* TODO */
-
-.fancy-quote {
-  font-size: 24px;
-  font-style: italic;
-  color: #333;
-  padding: 20px;
-  border-left: 4px solid #ccc;
-  background-color: #f9f9f9;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  width: 800px;
-  margin: 0 auto;
-  margin-top: 50px;
-}
-
-.fancy-quote cite {
-  font-size: 18px;
-  color: #666;
-  font-weight: bold;
-  display: block;
-  margin-top: 10px;
-}
-
-.h2-container {
-  margin-left: 100px;
-  margin-bottom: 100px;
-}
-
-.h2-container h2 {
-  font-size: 40px;
-  font-weight: 800;
-  color: #212121;
-  letter-spacing: 2px;
-  margin-bottom: 10px;
-  text-align: left;
-}
-
-.poster-container {
-  margin-top: 20px;
-  margin-bottom: 100px;
-  display: flex;
-  justify-content: center;
-}
-
-.poster-box {
-  background-color: #f9f9f9;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  padding: 20px;
-  display: flex;
-  width: 800px;
-}
-
-.poster-image {
-  width: 300px; 
-  height: 400px;
-  object-fit: cover;
-  border-radius: 10px;
-  margin-right: 20px;
-}
-
-.poster-info {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
-.poster-info h3 {
-  font-size: 24px;
-  font-weight: 700;
-  color: #212121;
-  letter-spacing: 2px;
-  margin-bottom: 10px;
-}
-
-.poster-info p {
-  font-size: 18px;
-  color: #666;
-  margin-bottom: 20px;
-}
-
-#disclaimer {
-  margin: 50px;
-  text-align: center;
+@media (max-width: 768px) {
+  .image-text-container {
+    flex-direction: column;
+  }
+  .portfolio-image {
+    width: 100%;
+    height: 280px;
+    object-fit: cover;
+    border-radius: 0;
+  }
+  .text-box {
+    margin: 0 auto;
+    text-align: center;
+    margin-top: -20px;
+  }
 }
 
 </style>

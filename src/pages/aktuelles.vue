@@ -1,7 +1,7 @@
 <template>
   <div>
     <span style='font-size:100px;'>&#128546;</span>
-    <p>Der Inhalt ist noch in Arbeit!</p>
+    <div class="text-3xl font-bold text-blue-500">Hello World!</div>
   </div>
 </template>
 

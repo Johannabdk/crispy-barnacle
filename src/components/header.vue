@@ -43,7 +43,7 @@ export default {
 
 <style scoped>
 .navbar {
-  background-color: #f3f3f3;
+  background-color: #965567;
   overflow: visible;
   position: fixed;
   top: 0;
@@ -62,7 +62,7 @@ export default {
 }
 
 .navbar a:hover, .dropdown:hover .dropbtn {
-  background-color: #ddd;
+  background-color: #a65e72;
   color: black;
 }
 
@@ -84,7 +84,7 @@ export default {
 .dropdown-content {
   display: none;
   position: absolute;
-  background-color: #f9f9f9;
+  background-color: #a65e72;
   min-width: 160px;
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
   z-index: 1;
@@ -102,7 +102,7 @@ export default {
 }
 
 .dropdown-content a:hover {
-  background-color: #ddd;
+  background-color: #bf6c83;
 }
 
 .dropdown:hover .dropdown-content {
@@ -120,7 +120,7 @@ export default {
 
 .navbar a:active {
   /* background color on click */
-  background-color: #ccc;
+  background-color: #ce768f;
   color: #333;
 }
 

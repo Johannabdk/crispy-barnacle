@@ -66,6 +66,7 @@
     margin: 0;
     padding: 0;
     font-family: 'Frutiger', sans-serif; 
+    background-color: #dee1e0;
     /*background-image: url("@/assets/icon/wallpaper1.jpg");
     background-size: cover;
     background-position: left;*/
